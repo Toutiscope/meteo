@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Meteo</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+	<div id="demo">
+
+		<div class="location" v-cloak>
+			<h1>{{response.name}}</h1>
+		</div>
+
+		<div class="temp" v-cloak>
+			<p>Température : {{response.main.temp}}</p>
+			<p>Température minimum : {{response.main.temp_min}}</p>
+			<p>Température maximum : {{response.main.temp_max}}</p>
+			<hr/>
+		</div>
+
+		<pre>{{response}}<pre>
+			
+	</div>
+
+
+
+	<!-- AXIOS -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/vue.js"></script>
+</body>
+</html>

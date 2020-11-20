@@ -1,0 +1,116 @@
+{
+  "request_state": 200,
+  "request_key": "fd543c77e33d6c8a5e218e948a19e487",
+  "message": "OK",
+  "model_run": "07",
+  "source": "internal:GFS:1",
+  "2020-11-20 10:00:00": {
+    "temperature": {
+      "2m": 279.8,
+      "sol": 277.8,
+      "500hPa": -0.1,
+      "850hPa": -0.1
+    },
+    "pression": { "niveau_de_la_mer": 103650 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 68.7 },
+    "vent_moyen": { "10m": 1.7 },
+    "vent_rafales": { "10m": 3.3 },
+    "vent_direction": { "10m": 265 },
+    "iso_zero": 975,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 61, "moyenne": 0, "basse": 83, "totale": 83 }
+  },
+  "2020-11-20 13:00:00": {
+    "temperature": {
+      "2m": 281.7,
+      "sol": 278.9,
+      "500hPa": -0.1,
+      "850hPa": -0.1
+    },
+    "pression": { "niveau_de_la_mer": 103660 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 60.4 },
+    "vent_moyen": { "10m": 2 },
+    "vent_rafales": { "10m": 5.8 },
+    "vent_direction": { "10m": 251 },
+    "iso_zero": 971,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 81, "moyenne": 16, "basse": 88, "totale": 92 }
+  },
+  "2020-11-20 16:00:00": {
+    "temperature": { "2m": 282.1, "sol": 280, "500hPa": -0.1, "850hPa": -0.1 },
+    "pression": { "niveau_de_la_mer": 103530 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 57 },
+    "vent_moyen": { "10m": 2.9 },
+    "vent_rafales": { "10m": 6.5 },
+    "vent_direction": { "10m": 260 },
+    "iso_zero": 999,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 4, "moyenne": 35, "basse": 10, "totale": 48 }
+  },
+  "2020-11-20 19:00:00": {
+    "temperature": {
+      "2m": 280.1,
+      "sol": 279.7,
+      "500hPa": -0.1,
+      "850hPa": -0.1
+    },
+    "pression": { "niveau_de_la_mer": 103590 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 64.4 },
+    "vent_moyen": { "10m": 2.9 },
+    "vent_rafales": { "10m": 4.2 },
+    "vent_direction": { "10m": 488 },
+    "iso_zero": 1025,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 35, "moyenne": 18, "basse": 7, "totale": 57 }
+  },
+  "2020-11-20 22:00:00": {
+    "temperature": {
+      "2m": 279.6,
+      "sol": 279.2,
+      "500hPa": -0.1,
+      "850hPa": -0.1
+    },
+    "pression": { "niveau_de_la_mer": 103580 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 66.6 },
+    "vent_moyen": { "10m": 8.5 },
+    "vent_rafales": { "10m": 15.1 },
+    "vent_direction": { "10m": 535 },
+    "iso_zero": 2013,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 2, "moyenne": 0, "basse": 0, "totale": 2 }
+  },
+  "2020-11-21 01:00:00": {
+    "temperature": {
+      "2m": 279.1,
+      "sol": 278.3,
+      "500hPa": -0.1,
+      "850hPa": -0.1
+    },
+    "pression": { "niveau_de_la_mer": 103580 },
+    "pluie": 0,
+    "pluie_convective": 0,
+    "humidite": { "2m": 69.4 },
+    "vent_moyen": { "10m": 8.8 },
+    "vent_rafales": { "10m": 18 },
+    "vent_direction": { "10m": 193 },
+    "iso_zero": 2092,
+    "risque_neige": "non",
+    "cape": 0,
+    "nebulosite": { "haute": 3, "moyenne": 0, "basse": 0, "totale": 3 }
+  }
+}
