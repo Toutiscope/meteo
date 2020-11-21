@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": 48.866667,
+    "lat": 2.333333
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Sun",
+      "description": "ensoleillé",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 11.43,
+    "feels_like": 10.63,
+    "temp_min": 9.44,
+    "temp_max": 13,
+    "pressure": 1050,
+    "humidity": 48
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 1.23,
+    "deg": 25
+  },
+  "clouds": {
+    "all": 60
+  },
+  "dt": 1605888570,
+  "sys": {
+    "type": 1,
+    "id": 6644,
+    "country": "FR",
+    "sunrise": 1605856688,
+    "sunset": 1605889570
+  },
+  "timezone": 3600,
+  "id": 0,
+  "name": "Paris",
+  "cod": 400
+}

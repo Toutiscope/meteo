@@ -6,32 +6,67 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Meteo</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/6bbaba6c57.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+	<!-- Pourquoi v-if et non v-show ? -->
+	<div id="app" :class="{night: night}" v-if="display"> 
+		<div id="card" :class="{night: night}">
+			<div @click="showInput" class="location" v-cloak>
+				<input v-if="show_input" v-model="zipcode" @blur="getZipcode" @keyup.enter="getZipcode"
+					placeholder="Code postal" type="text">
+				<h1 v-else="show_input">{{response.name}}</h1>
+			</div>
 
-	<div id="demo">
+			<div class="temp" v-cloak>
+				<p>{{(response.main.temp).toFixed(1)}}</p>
+				<p>↓ {{(response.main.temp_min).toFixed(1)}}°C</p>
+				<p>↑ {{(response.main.temp_max).toFixed(1)}}°C</p>
+			</div>
+			<div class="icon" @click="toggleNight()">
+				<i v-show="response.weather[0].icon === '01d' || response.weather[0].icon === '01n'"
+					class="fas fa-sun"></i>
 
-		<div class="location" v-cloak>
-			<h1>{{response.name}}</h1>
+				<i v-show="response.weather[0].icon === '02d' || response.weather[0].icon === '02n'"
+					class="fas fa-cloud-sun"></i>
+
+				<i v-show="response.weather[0].icon === '03d' || response.weather[0].icon === '03n'"
+					class="fas fa-cloud"></i>
+
+				<i v-show="response.weather[0].icon === '04d' || response.weather[0].icon === '04n'"
+					class="fas fa-cloud"></i>
+
+				<i v-show="response.weather[0].icon === '09d' || response.weather[0].icon === '09n'"
+					class="fas fa-cloud-showers-heavy"></i>
+
+				<i v-show="response.weather[0].icon === '10d' || response.weather[0].icon === '10n'"
+					class="fas fa-cloud-sun-rain"></i>
+
+				<i v-show="response.weather[0].icon === '11d' || response.weather[0].icon === '11n'"
+					class="fas fa-bolt"></i>
+
+				<i v-show="response.weather[0].icon === '13d' || response.weather[0].icon === '13n'"
+					class="fas fa-snowflake"></i>
+
+				<i v-show="response.weather[0].icon === '50d' || response.weather[0].icon === '50n'"
+					class="fas fa-smog"></i>
+
+				<p class="description">{{response.weather[0].description}}</p>
+
+				<!-- Comment mettre uniquement la date et l'heure ? -->
+				<p>{{new Date(response.dt * 1000)}}</p>
+			</div>
+			<!-- <pre>{{response}}<pre> -->
 		</div>
-
-		<div class="temp" v-cloak>
-			<p>Température : {{response.main.temp}}</p>
-			<p>Température minimum : {{response.main.temp_min}}</p>
-			<p>Température maximum : {{response.main.temp_max}}</p>
-			<hr/>
-		</div>
-
-		<pre>{{response}}<pre>
-			
 	</div>
 
 
 
-	<!-- AXIOS -->
+	<!-- AXIOS, Vue.JS & perso-->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="js/vue.js"></script>
 </body>
+
 </html>
