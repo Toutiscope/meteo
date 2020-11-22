@@ -5,21 +5,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Meteo</title>
+	<link rel="icon" type="image/svg+xml" href="/cloud-sun-solid.svg">
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="https://kit.fontawesome.com/6bbaba6c57.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<!-- Pourquoi v-if et non v-show ? -->
-	<div id="app" :class="{night: night}" v-if="display"> 
-		<div id="card" :class="{night: night}">
-			<div @click="showInput" class="location" v-cloak>
+	<div id="app" :class="{night: night}">
+
+		<!-- Quelle est la différence entre v-cloak et display -->
+		<div id="card" :class="{night: night, error: error}" v-if="display" v-cloak>
+
+			<div @click="showInput" class="location">
 				<input v-if="show_input" v-model="zipcode" @blur="getZipcode" @keyup.enter="getZipcode"
 					placeholder="Code postal" type="text">
-				<h1 v-else="show_input">{{response.name}}</h1>
+				<p v-else-if="!show_input && error">Erreur. Veuillez réessayer</p>
+				<h1 v-else>{{response.name}}</h1>
 			</div>
 
-			<div class="temp" v-cloak>
+			<div class="temp">
 				<p>{{(response.main.temp).toFixed(1)}}</p>
 				<p>↓ {{(response.main.temp_min).toFixed(1)}}°C</p>
 				<p>↑ {{(response.main.temp_max).toFixed(1)}}°C</p>
@@ -65,7 +70,8 @@
 
 	<!-- AXIOS, Vue.JS & perso-->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 	<script src="js/vue.js"></script>
 </body>
 

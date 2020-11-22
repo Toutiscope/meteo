@@ -1,3 +1,5 @@
+// https://api-adresse.data.gouv.fr/search/?q=nantes&type=municipality
+
 // URL to the real API, but limited requests per night
 const siteURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
 const keyAPI =
@@ -16,11 +18,12 @@ var demo = new Vue({
 
   data: {
     display: false,
+    error: false,
     night: "",
     show_input: false,
     zipcode: 44300,
-    // apiURL: siteURL.concat(44300, keyAPI),
-    apiURL: jsonFile.concat(44300, jsonExt),
+    apiURL: siteURL.concat(44300, keyAPI),
+    // apiURL: jsonFile.concat(44300, jsonExt),
     response: {},
   },
 
@@ -36,11 +39,13 @@ var demo = new Vue({
         .then(function (response) {
           console.log(response);
           self.response = response.data;
+          self.error = false;
           self.display = true;
         })
         .catch(function (error) {
           console.log(error);
-          self.response = "Erreur de chargement";
+          self.error = true;
+          // self.response = "Erreur de chargement"; // L'afficher sur la page
         });
     },
 
@@ -50,8 +55,9 @@ var demo = new Vue({
 
     getZipcode: function () {
       this.show_input = false;
-      // this.apiURL= siteURL.concat(this.zipcode, keyAPI),
-      (this.apiURL = jsonFile.concat(this.zipcode, jsonExt)), this.fetchData();
+      this.apiURL= siteURL.concat(this.zipcode, keyAPI),
+      // this.apiURL = jsonFile.concat(this.zipcode, jsonExt), 
+      this.fetchData();
 
       // Comment l'appeler aussi au chargement de la page ?
       if (
@@ -68,6 +74,10 @@ var demo = new Vue({
 
     toggleNight() {
       this.night = !this.night;
+    },
+
+    refresh() {
+      location.reload();
     },
   },
 });

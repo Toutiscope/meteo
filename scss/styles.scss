@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-[v-cloak] {
-  display: none;
-}
+[v-cloak] * { display:none; }
+// [v-cloak]::before { content: "loading..."; }
 
 body,
 html {
   font-family: "Heebo", sans-serif;
   min-height: 100%;
   margin: 0;
+}
+
+.error > div:not(.location) {
+  opacity: 0.3;
 }
 
 #app {
@@ -26,7 +29,7 @@ html {
   }
 }
 
-#card {
+#card, .card {
   background: white;
   display: flex;
   flex-direction: column;
@@ -72,13 +75,23 @@ html {
   text-align: end;
 
   input {
+    background: #b9c5dc38;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 12px -5px inset, rgba(0, 0, 0, 0.25) 0px 6px 10px -26px inset;
     font-size: 2em;
     margin: 0.67em 0;
+    padding: 0.2em;
     text-align: center;
     width: 100%;
   }
 
   h1 {
+    cursor: pointer;
+  }
+
+  p {
+    color: rgb(219, 44, 13);
     cursor: pointer;
   }
 }
