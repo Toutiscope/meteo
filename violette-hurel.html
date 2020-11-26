@@ -14,7 +14,6 @@
 	<div id="app" :class="{night: isNight}">
 		
 		<!-- Quelle est la différence entre v-cloak et display ? -->
-		<!-- Pourquoi v-if et non v-show ? -->
 		<div id="card" :class="{error: error}" v-if="display" v-cloak>
 
 			<div @click="showInput" class="location">
@@ -30,43 +29,41 @@
 				<p>↑ {{(response.main.temp_max).toFixed(1)}}°C</p>
 			</div>
 			<div class="icon" @click="toggleNight()">
-				<i v-show="response.weather[0].icon === '01d' || response.weather[0].icon === '01n'"
+				<i v-if="response.weather[0].icon === '01d' || response.weather[0].icon === '01n'"
 					class="fas fa-sun"></i>
 
-				<i v-show="response.weather[0].icon === '02d' || response.weather[0].icon === '02n'"
+				<i v-if="response.weather[0].icon === '02d' || response.weather[0].icon === '02n'"
 					class="fas fa-cloud-sun"></i>
 
-				<i v-show="response.weather[0].icon === '03d' || response.weather[0].icon === '03n'"
+				<i v-if="response.weather[0].icon === '03d' || response.weather[0].icon === '03n'"
 					class="fas fa-cloud"></i>
 
-				<i v-show="response.weather[0].icon === '04d' || response.weather[0].icon === '04n'"
+				<i v-if="response.weather[0].icon === '04d' || response.weather[0].icon === '04n'"
 					class="fas fa-cloud"></i>
 
-				<i v-show="response.weather[0].icon === '09d' || response.weather[0].icon === '09n'"
+				<i v-if="response.weather[0].icon === '09d' || response.weather[0].icon === '09n'"
 					class="fas fa-cloud-showers-heavy"></i>
 
-				<i v-show="response.weather[0].icon === '10d' || response.weather[0].icon === '10n'"
+				<i v-if="response.weather[0].icon === '10d' || response.weather[0].icon === '10n'"
 					class="fas fa-cloud-sun-rain"></i>
 
-				<i v-show="response.weather[0].icon === '11d' || response.weather[0].icon === '11n'"
+				<i v-if="response.weather[0].icon === '11d' || response.weather[0].icon === '11n'"
 					class="fas fa-bolt"></i>
 
-				<i v-show="response.weather[0].icon === '13d' || response.weather[0].icon === '13n'"
+				<i v-if="response.weather[0].icon === '13d' || response.weather[0].icon === '13n'"
 					class="fas fa-snowflake"></i>
 
-				<i v-show="response.weather[0].icon === '50d' || response.weather[0].icon === '50n'"
+				<i v-if="response.weather[0].icon === '50d' || response.weather[0].icon === '50n'"
 					class="fas fa-smog"></i>
 
 				<p class="description">{{response.weather[0].description}}</p>
 
-				<!-- Comment mettre uniquement la date et l'heure ? -->
 				<p id="day">{{week[day]}}</p>
 				<div class="date">
 					<span>Relevé à {{('0' + hours).slice(-2) + ":" + ('0' + minutes).slice(-2)}}</span>
 					<span>{{('0' + date).slice(-2) + "/" + ('0' + month).slice(-2) + "/" + year}}</span>
 				</div>
 			</div>
-			<!-- <pre>{{response}}<pre> -->
 		</div>
 	</div>
 
