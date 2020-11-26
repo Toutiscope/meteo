@@ -11,10 +11,10 @@
 </head>
 
 <body>
-	<!-- Pourquoi v-if et non v-show ? -->
 	<div id="app" :class="{night: isNight}">
-
+		
 		<!-- Quelle est la différence entre v-cloak et display ? -->
+		<!-- Pourquoi v-if et non v-show ? -->
 		<div id="card" :class="{error: error}" v-if="display" v-cloak>
 
 			<div @click="showInput" class="location">

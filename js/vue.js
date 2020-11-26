@@ -9,12 +9,6 @@ const keyAPI =
 const jsonFile = "js/openweather";
 const jsonExt = ".json";
 
-let day;
-
-/**
- * Weather App - Violette Hurel
- */
-
 var demo = new Vue({
   el: "#app",
 
