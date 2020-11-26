@@ -19,7 +19,7 @@
 			<div @click="showInput" class="location">
 				<input v-if="show_input" v-model="zipcode" @blur="getZipcode" @keyup.enter="getZipcode"
 					placeholder="Code postal" type="text">
-				<p v-else-if="!show_input && error">Erreur. Veuillez réessayer</p>
+				<p v-else-if="!show_input && error">Erreur. Veuillez insérer un code postal valide</p>
 				<h1 v-else>{{response.name}}</h1>
 			</div>
 

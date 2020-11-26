@@ -77,12 +77,8 @@ var demo = new Vue({
       }
     },
 
-    toggleNight() {
+    toggleNight: function() {
       this.isNight = !this.isNight;
-    },
-
-    refresh() {
-      location.reload();
     },
   },
 });
